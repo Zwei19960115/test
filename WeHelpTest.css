@@ -1,0 +1,15 @@
+.headline{
+    font-size:30px;font-weight:bold;
+    margin-bottom:15px;text-align:center;
+    background-color:#66cdaa;
+    width:100%;height:100%;
+    color:white;
+}
+.meme1{
+    text-align:center;block-size:30px;
+    font-size:20px;font-weight:bold;
+    color:#90ee90;
+}
+.meme2{
+    text-align:left;
+}
