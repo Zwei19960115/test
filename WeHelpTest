@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <style type="text/css">
+        body{ margin: 0; padding: 0px; }
+        </style>
+        <title>謝謝老師的教學影片</title>
+        <link rel="stylesheet" href="test.css">
+    </head>
+    <body>
+        <div class="headline">WeHelp 申請書</div>
+        <div class="meme1">個人簡介</div>
+        <hr/>
+        <div class="meme2" id="no1"></div>
+        <hr/>
+        <div class="meme1">為了成為軟體工程師，曾做過什麼努力？</div>
+        <hr/>
+        <div class="meme2" id="no2"></div>
+        <hr/>
+        <div class="meme1">如果參與這個計畫，會怎麼安排學習時間？</div>
+        <hr/>
+        <div class="meme2" id="no3"></div>
+        <hr/>
+        <div class="meme1">是否有想要加入的軟體公司？為什麼想加入該公司？</div>
+        <hr/>
+        <div class="meme2" id="no4"></div>
+        <hr/>
+        <div class="meme1">請描述一件你曾經碰到最困難的事情，如何克服？</div>
+        <hr/>
+        <div class="meme2" id="no5"></div>
+        <hr/>
+        <div class="meme1">關於這份申請網頁，請分享一個你開發時的技術心得。</div>
+        <hr/>
+        <div class="meme2" id="no6"></div>
+        <hr/>
+        <div class="meme1">其他想要對我們說的事情？</div>
+        <hr/>
+        <div class="meme2" id="no7"></div>
+
+        <img src="https://github.com/Zwei19960115/test/blob/main/data/I_got_you.gif?raw=true" id="imgg" style="display:none"/>
+        <button onclick="get()">點我</button>
+
+        <script>
+            fetch("https://zwei19960115.github.io/test/data/test1.json").then(function(response){
+                // console.log(response);
+                return response.json();    
+            }).then(function(result){
+                console.log(result);
+                let num1=result[0];
+                no1.innerHTML=num1.introduce;
+                let num2=result[1];
+                no2.innerHTML=num2.effort;
+                let num3=result[2];
+                no3.innerHTML=num3.plan;
+                let num4=result[3];
+                no4.innerHTML=num4.join;
+                let num5=result[4];
+                no5.innerHTML=num5.hard;
+                let num6=result[5];
+                no6.innerHTML=num6.experience;
+                let num7=result[6];
+                no7.innerHTML=num7.say;
+            });
+                function get(){
+                    document.getElementById('imgg').style.display="block";
+                }
+        </script>
+    </body>
+</html>
